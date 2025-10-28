@@ -1,0 +1,472 @@
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-color: #2563eb;
+    --secondary-color: #1e40af;
+    --success-color: #10b981;
+    --danger-color: #ef4444;
+    --text-primary: #1f2937;
+    --text-secondary: #6b7280;
+    --bg-light: #f9fafb;
+    --bg-white: #ffffff;
+    --border-color: #e5e7eb;
+    --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    color: var(--text-primary);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* Header */
+.header {
+    background: linear-gradient(180deg, #FFD700 0%, #DC143C 100%);
+    color: white;
+    padding: 1.5rem 2rem;
+    box-shadow: var(--shadow);
+    position: relative;
+    z-index: 1000;
+}
+
+.header-content {
+    text-align: center;
+}
+
+.kannada-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    font-family: 'Noto Sans Kannada', 'Kannada', serif;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.header-content h1 {
+    font-size: 1.75rem;
+    font-weight: 700;
+    margin-bottom: 0.25rem;
+}
+
+.header-content p {
+    font-size: 0.95rem;
+    opacity: 0.95;
+    font-weight: 400;
+}
+
+.header-stats {
+    margin-top: 0.75rem;
+    font-size: 0.9rem;
+    opacity: 0.9;
+}
+
+/* Search Section */
+.search-section {
+    background: var(--bg-white);
+    padding: 1rem 2rem;
+    border-bottom: 1px solid var(--border-color);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.search-container {
+    display: flex;
+    max-width: 800px;
+    margin: 0 auto;
+    gap: 0.75rem;
+}
+
+#search-input {
+    flex: 1;
+    padding: 0.75rem 1rem;
+    border: 2px solid var(--border-color);
+    border-radius: 8px;
+    font-size: 1rem;
+    outline: none;
+    transition: border-color 0.2s;
+}
+
+#search-input:focus {
+    border-color: var(--primary-color);
+}
+
+#search-input::placeholder {
+    color: var(--text-secondary);
+}
+
+.search-btn {
+    padding: 0.75rem 1.5rem;
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.search-btn:hover {
+    transform: translateY(-1px);
+    box-shadow: var(--shadow);
+}
+
+.search-btn:active {
+    transform: translateY(0);
+}
+
+/* Main Container */
+.main-container {
+    position: relative;
+    height: calc(100vh - 200px);
+    width: 100%;
+}
+
+/* Map Container */
+.map-container {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+/* Info Panel */
+.info-panel {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 400px;
+    max-height: calc(100% - 40px);
+    background: var(--bg-white);
+    border-radius: 12px;
+    box-shadow: var(--shadow-lg);
+    overflow-y: auto;
+    z-index: 1000;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.info-panel.hidden {
+    transform: translateX(450px);
+    opacity: 0;
+    pointer-events: none;
+}
+
+.close-btn {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: transparent;
+    border: none;
+    font-size: 2rem;
+    color: var(--text-secondary);
+    cursor: pointer;
+    padding: 0;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 6px;
+    transition: background 0.2s;
+}
+
+.close-btn:hover {
+    background: var(--bg-light);
+    color: var(--text-primary);
+}
+
+.info-content {
+    padding: 2rem;
+}
+
+.loading {
+    text-align: center;
+    color: var(--text-secondary);
+    padding: 2rem;
+}
+
+/* Road Details */
+.road-header {
+    border-bottom: 2px solid var(--primary-color);
+    padding-bottom: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.road-name {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 0.5rem;
+}
+
+.road-id {
+    font-size: 0.875rem;
+    color: var(--text-secondary);
+    font-family: 'Courier New', monospace;
+}
+
+.detail-section {
+    margin-bottom: 1.5rem;
+}
+
+.section-title {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--primary-color);
+    margin-bottom: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.detail-grid {
+    display: grid;
+    gap: 0.75rem;
+}
+
+.detail-item {
+    display: flex;
+    flex-direction: column;
+    padding: 0.75rem;
+    background: var(--bg-light);
+    border-radius: 6px;
+    border-left: 3px solid var(--primary-color);
+}
+
+.detail-label {
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+    font-weight: 500;
+    margin-bottom: 0.25rem;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+}
+
+.detail-value {
+    font-size: 1rem;
+    color: var(--text-primary);
+    font-weight: 600;
+}
+
+.detail-value.cost {
+    color: var(--success-color);
+    font-size: 1.25rem;
+}
+
+.description-text {
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+    line-height: 1.6;
+    padding: 1rem;
+    background: var(--bg-light);
+    border-radius: 6px;
+}
+
+/* Footer */
+.footer {
+    background: var(--bg-light);
+    padding: 1rem 2rem;
+    text-align: center;
+    border-top: 1px solid var(--border-color);
+    font-size: 0.875rem;
+    color: var(--text-secondary);
+}
+
+.footer a {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.footer a:hover {
+    text-decoration: underline;
+}
+
+/* Leaflet Customization */
+.leaflet-popup-content-wrapper {
+    border-radius: 8px;
+    box-shadow: var(--shadow-lg);
+}
+
+.leaflet-popup-content {
+    margin: 1rem;
+    font-size: 0.9rem;
+}
+
+
+/* Enhanced Map Controls */
+.leaflet-control-zoom {
+    border: none !important;
+    box-shadow: var(--shadow) !important;
+    border-radius: 8px !important;
+    overflow: hidden !important;
+}
+
+.leaflet-control-zoom a {
+    background: var(--bg-white) !important;
+    color: var(--text-primary) !important;
+    border: none !important;
+    font-size: 18px !important;
+    font-weight: 600 !important;
+    transition: background-color 0.2s !important;
+}
+
+.leaflet-control-zoom a:hover {
+    background: var(--bg-light) !important;
+    color: var(--primary-color) !important;
+}
+
+.leaflet-control-zoom a:active {
+    background: var(--border-color) !important;
+}
+
+/* Scale Control Styling */
+.leaflet-control-scale {
+    background: rgba(255, 255, 255, 0.9) !important;
+    border: 1px solid var(--border-color) !important;
+    border-radius: 4px !important;
+    box-shadow: var(--shadow) !important;
+    font-size: 11px !important;
+    color: var(--text-primary) !important;
+}
+
+/* Attribution Control Styling */
+.leaflet-control-attribution {
+    background: rgba(255, 255, 255, 0.9) !important;
+    border-radius: 4px !important;
+    box-shadow: var(--shadow) !important;
+    font-size: 10px !important;
+}
+
+.leaflet-control-attribution a {
+    color: var(--primary-color) !important;
+}
+
+/* Map Container Enhancements */
+.map-container {
+    cursor: grab;
+    background: linear-gradient(135deg, #fef3c7 0%, #fed7aa 50%, #fecaca 100%);
+}
+
+.map-container:active {
+    cursor: grabbing;
+}
+
+/* Custom map overlay for warm tones */
+.map-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, 
+        rgba(254, 243, 199, 0.1) 0%, 
+        rgba(254, 215, 170, 0.1) 50%, 
+        rgba(254, 202, 202, 0.1) 100%);
+    pointer-events: none;
+    z-index: 1;
+}
+
+/* Smooth Transitions */
+.leaflet-zoom-animated {
+    transition: transform 0.25s cubic-bezier(0, 0, 0.25, 1) !important;
+}
+
+/* Mobile Touch Improvements */
+@media (max-width: 768px) {
+    .leaflet-control-zoom {
+        margin-top: 10px;
+        margin-left: 10px;
+    }
+}
+
+/* Road Polyline Styles (applied via JS) */
+.road-highlight {
+    stroke: var(--primary-color);
+    stroke-width: 4;
+    stroke-opacity: 0.8;
+}
+
+.road-highlight:hover {
+    stroke: var(--danger-color);
+    stroke-width: 6;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .header {
+        padding: 1rem;
+    }
+
+    .header-content h1 {
+        font-size: 1.25rem;
+    }
+
+    .header-content p {
+        font-size: 0.85rem;
+    }
+
+    .main-container {
+        height: calc(100vh - 160px);
+    }
+
+    .info-panel {
+        width: calc(100% - 20px);
+        max-width: 100%;
+        top: 10px;
+        right: 10px;
+        left: 10px;
+        max-height: calc(100% - 20px);
+    }
+
+    .info-panel.hidden {
+        transform: translateY(100%);
+    }
+
+    .info-content {
+        padding: 1.5rem;
+    }
+
+    .road-name {
+        font-size: 1.25rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .header-content h1 {
+        font-size: 1.1rem;
+    }
+
+    .header-content p {
+        font-size: 0.8rem;
+    }
+
+    .footer {
+        font-size: 0.75rem;
+        padding: 0.75rem 1rem;
+    }
+}
+
+/* Scrollbar Styling */
+.info-panel::-webkit-scrollbar {
+    width: 8px;
+}
+
+.info-panel::-webkit-scrollbar-track {
+    background: var(--bg-light);
+    border-radius: 10px;
+}
+
+.info-panel::-webkit-scrollbar-thumb {
+    background: var(--text-secondary);
+    border-radius: 10px;
+}
+
+.info-panel::-webkit-scrollbar-thumb:hover {
+    background: var(--text-primary);
+}
+

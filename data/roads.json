@@ -1,0 +1,77 @@
+{
+  "roads": [
+    {
+      "id": "mg-road-001",
+      "name": "MG Road (Mahatma Gandhi Road)",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [12.9758, 77.6066],
+          [12.9747, 77.6056],
+          [12.9736, 77.6046],
+          [12.9725, 77.6036],
+          [12.9714, 77.6026]
+        ]
+      },
+      "tenderDetails": {
+        "tenderId": "BBMP-2023-MG-001",
+        "contractor": "ABC Construction Pvt Ltd",
+        "buildDate": "2023-01-15",
+        "completionDate": "2023-07-30",
+        "cost": "85000000",
+        "projectDuration": "6 months",
+        "roadLength": "1.2 km",
+        "description": "Complete reconstruction of MG Road including new drainage system, asphalt layer, and pedestrian walkways. Project includes traffic signal upgrades and street lighting installation."
+      }
+    },
+    {
+      "id": "brigade-road-002",
+      "name": "Brigade Road",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [12.9716, 77.6006],
+          [12.9706, 77.6016],
+          [12.9696, 77.6026],
+          [12.9686, 77.6036]
+        ]
+      },
+      "tenderDetails": {
+        "tenderId": "BBMP-2023-BR-002",
+        "contractor": "XYZ Infrastructure Solutions",
+        "buildDate": "2023-03-01",
+        "completionDate": "2023-08-15",
+        "cost": "62000000",
+        "projectDuration": "5 months",
+        "roadLength": "0.8 km",
+        "description": "Major renovation of Brigade Road commercial stretch with improved drainage, relaying of road surface with premium quality asphalt, and installation of underground utilities."
+      }
+    },
+    {
+      "id": "outer-ring-road-003",
+      "name": "Outer Ring Road - Marathahalli Section",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [12.9591, 77.6970],
+          [12.9580, 77.6980],
+          [12.9569, 77.6990],
+          [12.9558, 77.7000],
+          [12.9547, 77.7010],
+          [12.9536, 77.7020]
+        ]
+      },
+      "tenderDetails": {
+        "tenderId": "BBMP-2024-ORR-003",
+        "contractor": "PQR Highways Ltd",
+        "buildDate": "2024-01-10",
+        "completionDate": "2024-12-31",
+        "cost": "450000000",
+        "projectDuration": "12 months",
+        "roadLength": "3.5 km",
+        "description": "Widening and resurfacing of Outer Ring Road Marathahalli section from 4 lanes to 6 lanes. Includes construction of service roads, underpasses, pedestrian crossings, and bus bays. Advanced traffic management system implementation."
+      }
+    }
+  ]
+}
+

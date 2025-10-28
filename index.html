@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Interactive map showing Bengaluru road construction details, contractor information, and tender data - Let's Make Bengaluru Great Again">
+    <title>Let's Make Bengaluru Great Again</title>
+    
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+          integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+          crossorigin=""/>
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-content">
+            <h2 class="kannada-title">ನಮ್ಮ ಬೆಂಗಳೂರು</h2>
+            <h1>Let's Make Bengaluru Great Again</h1>
+        </div>
+    </header>
+
+    <!-- Search Section -->
+    <div class="search-section">
+        <div class="search-container">
+                    <input type="text" id="search-input" placeholder="Search any area in Bengaluru (e.g., Sarjapur, Nagarbhavi, Vijayanagar, MG Road)" />
+            <button id="search-btn" class="search-btn">Search</button>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <main class="main-container">
+        <!-- Map Container -->
+        <div id="map" class="map-container"></div>
+
+        <!-- Info Panel -->
+        <div id="info-panel" class="info-panel hidden">
+            <button class="close-btn" id="close-btn" aria-label="Close panel">&times;</button>
+            <div class="info-content" id="info-content">
+                <div class="loading">Click on a highlighted road to view details</div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>
+            Open Source Project | 
+            <a href="https://github.com/yourusername/lets-make-bengaluru-great-again" target="_blank" rel="noopener">
+                View on GitHub
+            </a> | 
+            <a href="#" id="contribute-link">Contribute Data</a>
+        </p>
+    </footer>
+
+    <!-- Leaflet JS -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+            integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+            crossorigin=""></script>
+    
+    <!-- Custom JS -->
+    <script src="js/data-loader.js"></script>
+    <script src="js/map.js"></script>
+</body>
+</html>
+
